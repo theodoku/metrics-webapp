@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
-import { HiOutlineArrowCircleRight } from "react-icons/hi";
+import PropTypes from 'prop-types';
+import { HiOutlineArrowCircleRight } from 'react-icons/hi';
 
 const Wrapper = ({ wrapper }) => {
-  const { map = "", name = "", population = "" } = wrapper;
+  const { map = '', name = '', population = '' } = wrapper;
 
   return (
     <>
@@ -24,14 +24,8 @@ Wrapper.propTypes = {
   wrapper: PropTypes.shape({
     name: PropTypes.string,
     population: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  }),
-  map: PropTypes.string,
-};
-
-Wrapper.defaultProps = {
-  name: "",
-  population: "",
-  map: "",
+    map: PropTypes.string,
+  }).isRequired,
 };
 
 export default Wrapper;

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import "./Dashboard.css";
+import PropTypes from 'prop-types';
+import './Dashboard.css';
 
 function Dashboard(props) {
   const { map, name, population } = props;
@@ -22,9 +22,9 @@ Dashboard.propTypes = {
 };
 
 Dashboard.defaultProps = {
-  name: "",
-  population: "",
-  map: "",
+  name: '',
+  population: '',
+  map: '',
 };
 
 export default Dashboard;
