@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.6rem;
+    background-color: #d6447d;
+    border-color: #fff3;
+    font-size: 1.3rem;
+}
+
+.chevron-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mic {
+    font-size: 1.2rem;
+}
+
+.header-title {
+    font-weight: 700;
+}
