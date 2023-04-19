@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
 import Dashboard from '../components/Dashboard';
+import './CountryDetails.css';
 
 const CountryDetails = () => {
   const location = useLocation();
