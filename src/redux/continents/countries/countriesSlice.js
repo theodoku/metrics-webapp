@@ -1,15 +1,15 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const COUNTRY_API_URL = "https://restcountries.com/v3.1/region/";
+const COUNTRY_API_URL = 'https://restcountries.com/v3.1/region/';
 
 const initialState = {
   countries: [],
-  status: "idle",
+  status: 'idle',
   error: null,
 };
 
-export const fetchCountries = createAsyncThunk("fetch/countries", async () => {
+export const fetchCountries = createAsyncThunk('fetch/countries', async () => {
   const response = await axios.get(COUNTRY_API_URL);
   const countries = response.data
     .filter((country) => country.independent)
@@ -30,7 +30,7 @@ export const fetchCountries = createAsyncThunk("fetch/countries", async () => {
       flag: country.flags.png,
       map: `'https://raw.githubusercontent.com/djaiss/mapsicon/master/all/'${country.cca2.toLowerCase()}/vector.svg`,
       currencies: Object.entries(country.currencies).map(
-        ([code, { name, symbol }]) => ({ code, name, symbol })
+        ([code, { name, symbol }]) => ({ code, name, symbol }),
       ),
       languages: Object.entries(country.languages).map(([code, name]) => ({
         code,
@@ -42,23 +42,23 @@ export const fetchCountries = createAsyncThunk("fetch/countries", async () => {
 });
 
 const countrySlice = createSlice({
-  name: "country",
+  name: 'country',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchCountries.pending, (state) => ({
         ...state,
-        status: "loading",
+        status: 'loading',
       }))
       .addCase(fetchCountries.fulfilled, (state, action) => ({
         ...state,
-        status: "succeeded",
+        status: 'succeeded',
         country: action.payload,
       }))
       .addCase(fetchCountries.rejected, (state, action) => ({
         ...state,
-        status: "failed",
+        status: 'failed',
         error: action.error.message,
       }));
   },
