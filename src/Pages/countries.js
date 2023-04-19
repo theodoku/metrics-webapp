@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router';
 import { fetchCountries } from '../redux/continents/countries/countriesSlice';
 import Dashboard from '../components/Dashboard';
 import Wrapper from '../components/wrapper';
@@ -36,11 +36,11 @@ const Countries = () => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredCountries = useMemo(() => countries.filter(
-    (country) => country.name.toLowerCase()
-      .includes(searchTerm.toLowerCase()),
-  ),
-  [countries, searchTerm]);
+  const filteredCountries = useMemo(
+    () => countries.filter((country) => country.name.toLowerCase()
+      .includes(searchTerm.toLowerCase())),
+    [countries, searchTerm],
+  );
 
   if (status === 'loading') {
     return <div>Loading...</div>;
