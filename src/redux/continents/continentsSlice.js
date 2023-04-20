@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const CONTINENT_URL = 'https://restcountries.com/v3.1/all';
+export const CONTINENT_API_URL = 'https://restcountries.com/v3.1/all';
 
 const continentMaps = {
   Africa: 'https://svgsilh.com/svg/28615.svg',
@@ -12,19 +12,21 @@ const continentMaps = {
   'South America': 'https://svgsilh.com/svg/311014.svg',
 };
 
-const intialState = {
+const initialState = {
   continents: [],
   status: 'idle',
   error: null,
 };
 
-export const getContinents = createAsyncThunk('fetch/continentsData', async () => {
-  const response = await axios.get(CONTINENT_URL);
-  const { data } = response;
-  return data;
-});
+export const getContinents = createAsyncThunk(
+  'continents/getContinents',
+  async () => {
+    const response = await axios.get(CONTINENT_API_URL);
+    return response.data;
+  },
+);
 
-const continentsData = (data) => {
+function computeContinentsData(data) {
   const regions = {};
 
   data.forEach((country) => {
@@ -32,6 +34,7 @@ const continentsData = (data) => {
       const continent = country.continents[0];
       const { region } = country;
 
+      // Use the `in` operator to check if a property exists
       if (!(continent in regions)) {
         regions[continent] = {
           id: continent,
@@ -47,14 +50,16 @@ const continentsData = (data) => {
       regions[continent].noOfCountries += 1;
     }
   });
+
+  // Use Object.values() to get an array of object values
   const sortedRegions = Object.values(regions)
     .sort((regionA, regionB) => regionA.name.localeCompare(regionB.name));
   return sortedRegions;
-};
+}
 
 const continentSlice = createSlice({
   name: 'continents',
-  intialState,
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -65,7 +70,12 @@ const continentSlice = createSlice({
       .addCase(getContinents.fulfilled, (state, action) => ({
         ...state,
         status: 'succeeded',
-        continents: continentsData(action.payload),
+        continents: computeContinentsData(action.payload),
+      }))
+      .addCase(getContinents.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        error: action.error.message,
       }));
   },
 });

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Continents from './Pages/continents';
 import Countries from './Pages/countries';
 import CountryDetails from './Pages/countriesDetails';
+import './App.css';
 
 const App = () => (
   <Router>

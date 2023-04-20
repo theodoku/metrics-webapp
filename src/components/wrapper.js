@@ -9,7 +9,7 @@ const Wrapper = ({ wrapper }) => {
       <div className="right-arrow">
         <HiOutlineArrowCircleRight />
       </div>
-      <section className="wrapper-conmtent">
+      <section className="wrapper-content">
         <img src={map} alt={name} className="wrapper-map" />
         <div className="wrapper-container">
           <h3 className="wrapper-title">{name}</h3>

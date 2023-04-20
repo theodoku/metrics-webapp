@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/wrapper';
+import Wrapper from '../components/Wrapper';
 import { getContinents } from '../redux/continents/continentsSlice';
 
 const Continents = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { continents, status } = useSelector((state) => state.continents);
+  const history = useHistory();
 
   useEffect(() => {
-    if (!continents.length) {
+    if (status === 'idle') { // Only fetch the data if it hasn't been fetched yet
       dispatch(getContinents());
     }
-  }, [continents, dispatch]);
+  }, [dispatch, status]);
 
   if (status === 'loading') return <div>...loading</div>;
 
@@ -25,7 +25,7 @@ const Continents = () => {
 
   const handleContinentClick = (continent) => {
     const continentString = JSON.stringify(continent);
-    navigate(`/continent?continent${continentString}`);
+    history.push(`/continent?continent${continentString}`);
   };
 
   return (

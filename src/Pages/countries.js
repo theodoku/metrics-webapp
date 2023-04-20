@@ -1,13 +1,13 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useLocation } from 'react-router';
-import { fetchCountries } from '../redux/continents/countries/countriesSlice';
+import { useLocation, useHistory } from 'react-router-dom';
+import { getCountries } from '../redux/continents/countries/countriesSlice';
 import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/wrapper';
+import Wrapper from '../components/Wrapper';
 
 const Countries = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const history = useHistory();
   const { countries, status } = useSelector((state) => state.countries);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -18,18 +18,14 @@ const Countries = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    if (
-      countries.length === 0
-      || region !== countries[0].region
-      || name !== countries[0].continent
-    ) {
-      dispatch(fetchCountries({ region, name }));
+    if (region) {
+      dispatch(getCountries({ region }));
     }
-  }, [name, region, countries, dispatch]);
+  }, [region, dispatch]);
 
   const handleCountryClick = (country) => {
     const countryString = JSON.stringify(country);
-    navigate(`/country?country${countryString}`);
+    history.push(`/country?country=${countryString}`);
   };
 
   const handleSearch = (e) => {
