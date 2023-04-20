@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import Dashboard from "../components/Dashboard";
-import Wrapper from "../components/Wrapper";
-import { getContinents } from "../redux/continents/continentsSlice";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Dashboard from '../components/Dashboard';
+import Wrapper from '../components/Wrapper';
+import { getContinents } from '../redux/continents/continentsSlice';
 
 const Continents = () => {
   const dispatch = useDispatch();
@@ -11,17 +11,17 @@ const Continents = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (status === "idle") {
+    if (status === 'idle') {
       // Only fetch the data if it hasn't been fetched yet
       dispatch(getContinents());
     }
   }, [dispatch, status]);
 
-  if (status === "loading") return <div>...loading</div>;
+  if (status === 'loading') return <div>...loading</div>;
 
   const totalPopulation = continents.reduce(
     (accumulator, object) => accumulator + object.population,
-    0
+    0,
   );
 
   const handleContinentClick = (continent) => {
