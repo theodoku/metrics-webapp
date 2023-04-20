@@ -63,7 +63,7 @@ The key features of this website include.
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://world-index-app.onrender.com)
 
 - [Demo Video Link](https://www.loom.com/share/e26fbe7d5e11470699b724d40223c56e)
 
