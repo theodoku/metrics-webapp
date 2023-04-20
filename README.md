@@ -65,6 +65,7 @@ The key features of this website include.
 
 - [Live Demo Link]()
 
+- [Demo Video Link](https://www.loom.com/share/e26fbe7d5e11470699b724d40223c56e)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
