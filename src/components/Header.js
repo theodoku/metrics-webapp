@@ -1,27 +1,27 @@
-import { useEffect, useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
-import { IoIosArrowBack, IoIosSettings } from "react-icons/io";
-import { BsMicFill } from "react-icons/bs";
-import "./Header.css";
+import { useEffect, useState } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { IoIosArrowBack, IoIosSettings } from 'react-icons/io';
+import { BsMicFill } from 'react-icons/bs';
+import './Header.css';
 
 const Header = () => {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   const location = useLocation();
   const history = useHistory();
 
   useEffect(() => {
     switch (location.pathname) {
-      case "/":
-        setTitle("World Index");
+      case '/':
+        setTitle('World Index');
         break;
-      case "/continent":
-        setTitle("Continent Details");
+      case '/continent':
+        setTitle('Continent Details');
         break;
-      case "/country":
-        setTitle("Country Details");
+      case '/country':
+        setTitle('Country Details');
         break;
       default:
-        setTitle("Page Not Found");
+        setTitle('Page Not Found');
         break;
     }
   }, [location]);
