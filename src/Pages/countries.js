@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useHistory } from 'react-router-dom';
-import { getCountries } from '../redux/continents/countries/countriesSlice';
+import {
+  getCountries,
+} from '../redux/continents/countries/countriesSlice';
 import Dashboard from '../components/Dashboard';
 import Wrapper from '../components/Wrapper';
 
@@ -18,10 +20,10 @@ const Countries = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    if (region) {
+    if (status === 'idle') {
       dispatch(getCountries({ region }));
     }
-  }, [region, dispatch]);
+  }, [status, region, dispatch]);
 
   const handleCountryClick = (country) => {
     const countryString = JSON.stringify(country);

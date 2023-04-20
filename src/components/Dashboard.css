@@ -1,8 +1,8 @@
 .Dashboard {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 .dashboard-map {
@@ -13,12 +13,12 @@
 }
 
 .map-container {
-    align-items: flex-start;
-    text-align: right;
-    max-width: 50%;
+  align-items: flex-start;
+  text-align: right;
+  max-width: 50%;
 }
 
 .dash-title {
-    font-size: 1.6rem;
-    text-transform: uppercase;
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }

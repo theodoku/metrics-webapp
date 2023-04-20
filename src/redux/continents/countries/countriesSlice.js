@@ -37,17 +37,33 @@ const filteredCountries = (data) => data
 
 export const getCountries = createAsyncThunk(
   'countries/getCountries',
-  async ({ region, name }) => {
+  async ({ continent, name }) => {
     let url;
-    if (region === 'All') {
-      url = 'https://restcountries.com/v3.1/all';
-    } else {
-      url = `https://restcountries.com/v3.1/region/${region}`;
+    switch (continent) {
+      case 'Africa':
+        url = 'https://restcountries.com/v3.1/region/africa';
+        break;
+      case 'Asia':
+        url = 'https://restcountries.com/v3.1/region/asia';
+        break;
+      case 'Europe':
+        url = 'https://restcountries.com/v3.1/region/europe';
+        break;
+      case 'South America':
+        url = 'https://restcountries.com/v3.1/region/americas';
+        break;
+      case 'North America':
+        url = 'https://restcountries.com/v3.1/region/americas';
+        break;
+      case 'Oceania':
+        url = 'https://restcountries.com/v3.1/region/oceania';
+        break;
+      default:
+        url = 'https://restcountries.com/v3.1/all';
     }
 
     const response = await axios.get(url);
     const countries = response.data;
-
     if (name) {
       return countries.filter((country) => country.name.common === name);
     }

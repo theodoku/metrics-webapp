@@ -1,18 +1,18 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0.6rem;
-    background-color: #d6447d;
-    border-color: #fff3;
-    font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.6rem;
+  background-color: #f8afa6;
+  border-color: #fff3;
+  font-size: 1.3rem;
 }
 
 .chevron-left,
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-icon {
@@ -21,9 +21,9 @@
 }
 
 .mic {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .header-title {
-    font-weight: 700;
+  font-weight: 700;
 }

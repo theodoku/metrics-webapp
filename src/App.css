@@ -1,8 +1,8 @@
 .wrapper-content {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    text-transform: uppercase;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .arrow-right {
@@ -31,7 +31,7 @@
 }
 
 .data-section {
-  background-color: #df4782;
+  background-color: #f8afa6;
 }
 
 .search-wrapper {
@@ -67,7 +67,7 @@
 .navbar .nav-item {
   color: #fff;
   text-decoration: none;
-  background-color: #ce4277;
+  background-color: #f79489;
   padding: 0.5rem;
   width: 50%;
 }
@@ -75,10 +75,10 @@
 .nav-item:first-child,
 .nav-item:nth-child(4n),
 .nav-item:nth-child(4n+1) {
-  background-color: #dc4681;
+  background-color: #f8afa6;
 }
 
 .nav-item:hover {
-  background-color: #ff5294;
+  background-color: #a45c40;
   transform: scale(0.99);
 }
