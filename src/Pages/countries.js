@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useHistory } from 'react-router-dom';
 import { getCountries } from '../redux/continents/countries/countriesSlice';
 import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/Wrapper.js';
+import Wrapper from '../components/Wrapper';
 
 const Countries = () => {
   const dispatch = useDispatch();
