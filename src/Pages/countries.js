@@ -1,11 +1,9 @@
-import { useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useHistory } from 'react-router-dom';
-import {
-  getCountries,
-} from '../redux/continents/countries/countriesSlice';
-import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/Wrapper';
+import { useEffect, useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useHistory } from "react-router-dom";
+import { getCountries } from "../redux/continents/countries/countriesSlice";
+import Dashboard from "../components/Dashboard";
+import Wrapper from "./src/components/wrapper";
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -13,14 +11,12 @@ const Countries = () => {
   const { countries, status } = useSelector((state) => state.countries);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const continent = JSON.parse(searchParams.get('continent') || '{}');
-  const {
-    region, map, population, name, noOfCountries,
-  } = continent;
-  const [searchTerm, setSearchTerm] = useState('');
+  const continent = JSON.parse(searchParams.get("continent") || "{}");
+  const { region, map, population, name, noOfCountries } = continent;
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(getCountries({ region }));
     }
   }, [status, region, dispatch]);
@@ -35,12 +31,14 @@ const Countries = () => {
   };
 
   const filteredCountries = useMemo(
-    () => countries.filter((country) => country.name.toLowerCase()
-      .includes(searchTerm.toLowerCase())),
-    [countries, searchTerm],
+    () =>
+      countries.filter((country) =>
+        country.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    [countries, searchTerm]
   );
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return <div>Loading...</div>;
   }
 

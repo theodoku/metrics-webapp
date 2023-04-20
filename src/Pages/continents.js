@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/Wrapper';
+import Wrapper from './src/components/wrapper';
 import { getContinents } from '../redux/continents/continentsSlice';
 
 const Continents = () => {
