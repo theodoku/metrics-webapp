@@ -31,7 +31,7 @@
 }
 
 .data-section {
-  background-color: #f8afa6;
+  background-color:#0A4D68 ;
 }
 
 .search-wrapper {
@@ -67,7 +67,7 @@
 .navbar .nav-item {
   color: #fff;
   text-decoration: none;
-  background-color: #f79489;
+  background-color:#088395;
   padding: 0.5rem;
   width: 50%;
 }
@@ -75,10 +75,10 @@
 .nav-item:first-child,
 .nav-item:nth-child(4n),
 .nav-item:nth-child(4n+1) {
-  background-color: #f8afa6;
+  background-color: #05BFDB;
 }
 
 .nav-item:hover {
-  background-color: #a45c40;
+  background-color: #00FFCA;
   transform: scale(0.99);
 }

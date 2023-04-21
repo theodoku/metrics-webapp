@@ -53,7 +53,8 @@ function computeContinentsData(data) {
 
   // Use Object.values() to get an array of object values
   const sortedRegions = Object.values(regions)
-    .sort((regionA, regionB) => regionA.name.localeCompare(regionB.name));
+    .sort((regionA, regionB) => regionA.name
+      .localeCompare(regionB.name));
   return sortedRegions;
 }
 

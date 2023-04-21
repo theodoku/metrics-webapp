@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Continents from './Pages/continents';
-import Countries from './Pages/countries';
-import CountryDetails from './Pages/countriesDetails';
+import Header from './components/Header.js';
+import Continents from './Pages/continents.js';
+import Countries from './Pages/countries.js';
+import CountryDetails from './Pages/countriesDetails.js';
 import './App.css';
 
 const App = () => (
