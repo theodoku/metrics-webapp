@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useHistory } from 'react-router-dom';
-import { getCountries } from '../redux/continents/countries/countriesSlice';
-import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/wrapper';
+import { getCountries } from '../redux/continents/countries/countriesSlice.js';
+import Dashboard from '../components/Dashboard.js';
+import Wrapper from '../components/wrapper.js';
 
 const Countries = () => {
   const dispatch = useDispatch();

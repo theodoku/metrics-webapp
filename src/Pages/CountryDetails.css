@@ -6,7 +6,7 @@
 }
 
 .item-container {
-  background-color: #f79489;
+  background-color: #ea4a88;
 }
 
 .item {
@@ -18,7 +18,7 @@
 }
 
 .item:nth-child(even) {
-  background-color: #c38370;
+  background-color: #ce4277;
 }
 
 .flag {

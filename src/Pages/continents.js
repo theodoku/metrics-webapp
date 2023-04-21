@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Dashboard from '../components/Dashboard';
-import Wrapper from '../components/wrapper';
-import { getContinents } from '../redux/continents/continentsSlice';
+import Dashboard from '../components/Dashboard.js';
+import Wrapper from '../components/wrapper.js';
+import { getContinents } from '../redux/continents/continentsSlice.js';
 
 const Continents = () => {
   const dispatch = useDispatch();

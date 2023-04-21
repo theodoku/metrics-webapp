@@ -6,12 +6,10 @@ const Wrapper = ({ wrapper }) => {
 
   return (
     <>
-      <div className="right-arrow">
-        <HiOutlineArrowCircleRight />
-      </div>
       <section className="wrapper-content">
         <img src={map} alt={name} className="wrapper-map" />
         <div className="wrapper-container">
+          <HiOutlineArrowCircleRight className="right-arrow" />
           <h3 className="wrapper-title">{name}</h3>
           <span>{population}</span>
         </div>
