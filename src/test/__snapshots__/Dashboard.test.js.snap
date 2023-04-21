@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard component renders the component with props 1`] = `
+<section
+  class="Dashboard"
+>
+  <img
+    alt="Test City"
+    class="dashboard-map"
+    src="https://test.com/map.png"
+  />
+  <article
+    class="map-container"
+  >
+    <h2
+      class="dash-title"
+    >
+      Test City
+    </h2>
+    <span
+      class="pop"
+    >
+      100000
+    </span>
+  </article>
+</section>
+`;
